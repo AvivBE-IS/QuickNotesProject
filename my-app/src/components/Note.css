@@ -1,9 +1,61 @@
-.nameDiv {
+.noteContainer {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 12px 16px 16px 16px; /* a bit less top padding */
+  margin-bottom: 16px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.07);
+  max-width: 320px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
   text-align: left;
-  color: rgb(194, 178, 175);
-  font-size: 14px;
 }
 
-.textDiv {
-  font-size: 100px !important;
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.noteDate {
+  font-size: 12px;
+  color: #888888;
+  font-weight: normal;
+  user-select: none;
+}
+
+.closeButton {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px; /* smaller */
+  color: #bbb;
+  border: none;
+  background: transparent;
+  transition: color 0.25s ease;
+  padding: 0;
+  line-height: 1;
+  margin-left: 12px; /* space from date */
+}
+
+.closeButton:hover,
+.closeButton:focus {
+  color: #333;
+  outline: none;
+}
+
+.noteTitle {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.noteText {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555;
+  white-space: pre-wrap;
+  user-select: text;
 }

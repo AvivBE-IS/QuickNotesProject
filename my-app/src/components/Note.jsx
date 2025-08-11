@@ -1,34 +1,28 @@
 import { format } from "date-fns";
+import "./Note.css";
 
 function Note(props) {
-  console.log({ props });
   const date = new Date("2025-08-31T12:30:00");
   const formatted = format(date, "MMM do hh:mm a");
 
-  const styles = {
-    nameDiv: {
-      textAlign: "left",
-      color: "rgb(194, 178, 175)",
-      fontSize: "7px",
-    },
-    textDiv: {
-      fontSize: "20px",
-      textAlign: "left",
-    },
-    titleDiv: {
-      fontSize: "30px",
-      textAlign: "left",
-      fontWeight: "bold",
-    },
+  const deleteNote = () => {
+    props.handleDelete(props.id); // Pass id back on delete
   };
 
   return (
-    <div>
-      <div style={styles.nameDiv}>{formatted}</div>
-      <br />
-      <div style={styles.titleDiv}>{props.titleState} </div>
-      <br />
-      <div style={styles.textDiv}>{props.textState}</div>
+    <div className="noteContainer">
+      <div className="headerRow">
+        <div className="noteDate">{formatted}</div>
+        <button
+          className="closeButton"
+          aria-label="Close note"
+          onClick={deleteNote}
+        >
+          ×
+        </button>
+      </div>
+      <div className="noteTitle">{props.titleState}</div>
+      <div className="noteText">{props.textState}</div>
     </div>
   );
 }
